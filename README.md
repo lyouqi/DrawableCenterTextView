@@ -9,5 +9,5 @@ Issue report welcomed.<br/>
 Known bug:When used in LinearLayout with attribute <code>android:layout_height="0dp"
     android:layout_weight="1"</code>,text will be invisible.
 
-Download: [DrawableCenterTextView.jar](.\app\libs\DrawableCenterTextView.jar)<br/>
+Download: <a href=".\app\libs\DrawableCenterTextView.jar">DrawableCenterTextView.jar</a><br/>
 Last update:2017/02/18
