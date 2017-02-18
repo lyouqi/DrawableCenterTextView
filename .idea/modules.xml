@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DrawableCenterTextView/DrawableCenterTextView.iml" filepath="$PROJECT_DIR$/DrawableCenterTextView/DrawableCenterTextView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DrawableCenterTextViewDemo.iml" filepath="$PROJECT_DIR$/DrawableCenterTextViewDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>
