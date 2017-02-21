@@ -1,4 +1,4 @@
-package priv.dengchao.drawablecentertextview;
+package priv.dengchao.support;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -15,6 +15,9 @@ import android.widget.TextView;
  */
 
 public class DrawableCenterTextView extends TextView {
+
+    private boolean needRedraw = true;//lock
+
     public DrawableCenterTextView(Context context) {
         super(context);
     }
@@ -74,8 +77,16 @@ public class DrawableCenterTextView extends TextView {
         }
         totalHeight = (float) (textHeight + totalDrawableHeight + totalDrawablePaddingV);
         paddingV = (int) (getHeight() - totalHeight) / 2;
-
         // reset padding.
-        setPadding(paddingH, paddingV, paddingH, paddingV);
+        if (needRedraw) {
+            setPadding(paddingH, paddingV, paddingH, paddingV);
+        }
+    }
+
+    @Override
+    public void setPadding(int left, int top, int right, int bottom) {
+        super.setPadding(left, top, right, bottom);
+        needRedraw = false;//unlock
+        invalidate();
     }
 }

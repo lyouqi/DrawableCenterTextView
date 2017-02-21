@@ -12,7 +12,7 @@
         android:drawableTop="@mipmap/ic_launcher"
         android:text="TextView" />
 
-    <priv.dengchao.drawablecentertextview.DrawableCenterTextView
+    <priv.dengchao.support.DrawableCenterTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableTop="@mipmap/ic_launcher"
@@ -25,7 +25,7 @@
         android:gravity="center_vertical"
         android:text="TextView" />
 
-    <priv.dengchao.drawablecentertextview.DrawableCenterTextView
+    <priv.dengchao.support.DrawableCenterTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@mipmap/ic_launcher"
