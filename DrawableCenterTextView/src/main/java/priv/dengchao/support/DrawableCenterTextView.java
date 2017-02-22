@@ -1,7 +1,6 @@
 package priv.dengchao.support;
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.TextView;
@@ -16,8 +15,6 @@ import android.widget.TextView;
 
 public class DrawableCenterTextView extends TextView {
 
-    private boolean needRedraw = true;//lock
-
     public DrawableCenterTextView(Context context) {
         super(context);
     }
@@ -31,8 +28,8 @@ public class DrawableCenterTextView extends TextView {
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        //All these logic should happen before onDraw()
         Drawable[] drawables = getCompoundDrawables();//drawables always not null;
         Drawable drawableLeft = drawables[0],
                 drawableTop = drawables[1],
@@ -42,8 +39,6 @@ public class DrawableCenterTextView extends TextView {
         String text = getText().toString();
         float textWidth = getPaint().measureText(text, 0, text.length());
         double textHeight = getLineHeight() * getLineCount();
-//        Paint.FontMetrics fontMetrics = getPaint().getFontMetrics();//another way to get textHeight
-//        double textHeight=Math.ceil(fontMetrics.descent-fontMetrics.ascent)*getLineCount();
 
         int totalDrawablePaddingH = 0;//the total horizontal padding of drawableLeft and drawableRight
         int totalDrawablePaddingV = 0;//the total vertical padding of drawableTop and drawableBottom
@@ -79,9 +74,6 @@ public class DrawableCenterTextView extends TextView {
         paddingV = (int) (getHeight() - totalHeight) / 2;
 
         // reset padding.
-        if (needRedraw) {
-            needRedraw = false;//unlock
-            setPadding(paddingH, paddingV, paddingH, paddingV);//this method calls invalidate() inside;
-        }
+        setPadding(paddingH, paddingV, paddingH, paddingV);//this method calls invalidate() inside;
     }
 }
