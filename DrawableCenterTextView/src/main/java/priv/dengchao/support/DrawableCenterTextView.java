@@ -77,16 +77,11 @@ public class DrawableCenterTextView extends TextView {
         }
         totalHeight = (float) (textHeight + totalDrawableHeight + totalDrawablePaddingV);
         paddingV = (int) (getHeight() - totalHeight) / 2;
+
         // reset padding.
         if (needRedraw) {
-            setPadding(paddingH, paddingV, paddingH, paddingV);
+            needRedraw = false;//unlock
+            setPadding(paddingH, paddingV, paddingH, paddingV);//this method calls invalidate() inside;
         }
-    }
-
-    @Override
-    public void setPadding(int left, int top, int right, int bottom) {
-        super.setPadding(left, top, right, bottom);
-        needRedraw = false;//unlock
-        invalidate();
     }
 }
