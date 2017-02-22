@@ -10,6 +10,6 @@ Known bug:When used in LinearLayout with attribute <code>android:layout_height="
     android:layout_weight="1"</code>,text will be invisible.
 
 Download:
-<a href="https://github.com/XieEDeHeiShou/DrawableCenterTextView/releases/download/1.1/DrawableCenterTextView_v1.1.jar">DrawableCenterTextView_v1.1.jar</a>
+<a href="https://github.com/XieEDeHeiShou/DrawableCenterTextView/releases/download/1.2/DrawableCenterTextView_v1.2.jar">DrawableCenterTextView_v1.2.jar</a>
 <br/>
 Last update:2017/02/22
